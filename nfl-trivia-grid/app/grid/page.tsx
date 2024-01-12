@@ -1,5 +1,7 @@
 'use client';
 import React, { useState } from 'react';
+import getNFLPlayerData from '@/app/lib/actions';
+import PlayerData from '@/app/ui/playerdata';
 
 const teams = ["Team A", "Team B", "Team C"]; // Replace with actual NFL team names
 
@@ -13,6 +15,8 @@ const GridCell = ({ onClick, value }: { onClick: () => void; value: string }) =>
 export default function Page() {
   const [grid, setGrid] = useState(Array(3).fill(Array(3).fill('')));
   const [guessesRemaining, setGuessesRemaining] = useState(9);
+
+
 
   const handleCellClick = (row: number, col: number) => {
     // Handle logic when a grid cell is clicked
