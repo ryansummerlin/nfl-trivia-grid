@@ -1,8 +1,6 @@
 'use client';
 import React, { useState, Suspense, useEffect } from 'react';
-import getNFLPlayerData from '@/app/lib/actions';
-// import PlayerData from '@/app/ui/playerdata';
-import { PlayerDataSkeleton } from '../ui/skeletons';
+
 
 const teams = ["Team A", "Team B", "Team C"]; // Replace with actual NFL team names
 
