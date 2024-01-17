@@ -1,4 +1,5 @@
-export async function GET(teamID: number) {
+export async function GET() {
+    const teamID = 1;
     const teamURL = `https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/${teamID}`
 
     const res = await fetch(teamURL);
