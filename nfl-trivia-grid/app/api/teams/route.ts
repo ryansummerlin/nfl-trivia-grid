@@ -1,6 +1,6 @@
 export async function GET() {
     const teamID = 1;
-    const teamURL = `https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/${teamID}`
+    const teamURL = `https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/?limit=32`
 
     const res = await fetch(teamURL);
     const data = await res.json();
