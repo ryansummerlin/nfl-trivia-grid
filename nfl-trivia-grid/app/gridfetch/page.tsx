@@ -7,5 +7,17 @@ export default function Page() {
         })
     }
 
-    return <button onClick={makeAPICall}>Make api call</button>
+    const getTeamName = async() => {
+        await fetch('api/teamName', {
+            method: 'GET'
+        })
+    }
+
+    return (
+        <main>
+            <button onClick={makeAPICall}>Make api call</button>
+            <button onClick={getTeamName}>get team name</button>
+        </main>
+
+        )
 }
