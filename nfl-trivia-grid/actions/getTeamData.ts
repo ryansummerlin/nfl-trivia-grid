@@ -1,21 +1,23 @@
 'use server'
 
 export const getTeamData = async ({
-    id
+    teamId
   }: {
-    id: number
+    teamId: number
   }) => {
     const data = await fetch(
-        `https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/teams/?limit=32`
-    )
+        `https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/teams/${teamId}`
+    ).then(res => res.json())
     if (!data.ok) {
       throw new Error("Failed to fetch data")
     }
 
-    // const teamData = {
-    //     name: data.name,
-    //     id: data.id
-    // }
+    const teamData = {
+        name: data.name,
+        id: data.id
+    }
 
-    return data;
+    console.log(teamData);
+
+    return teamData;
   }
