@@ -3,7 +3,7 @@ export async function GET() {
 
     const allTeamsRes = await fetch(teamsURL);
     const allTeamsData = await allTeamsRes.json();
-    console.log(allTeamsData);
+    // console.log(allTeamsData);
 
     const teamData = {
         items: allTeamsData.items
@@ -11,7 +11,7 @@ export async function GET() {
 
 
     const teamsByAPIEndpoint = teamData.items;
-    console.log(teamsByAPIEndpoint);
+    // console.log(teamsByAPIEndpoint);
     const teams = [];
 
     for (let i = 0; i < teamsByAPIEndpoint.length; i++) {
@@ -24,8 +24,8 @@ export async function GET() {
         })
     }
 
-    console.log(teams);
+    console.log(new Response(JSON.stringify(teams)));
 
 
-    return new Response(JSON.stringify(allTeamsData));
+    return new Response(JSON.stringify(teams));
 }
