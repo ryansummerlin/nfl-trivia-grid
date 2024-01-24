@@ -1,3 +1,4 @@
+
 import { Team } from '@/app/lib/definitions';
 
 
@@ -29,6 +30,13 @@ const fetchTeamNames = async (): Promise<Team[]> => {
 }
 
 const teamNames = await fetchTeamNames();
+const firstTeam = teamNames[0].name;
 const teamNamesJson = JSON.stringify(teamNames);
 
-export { teamNamesJson };
+// export { teamNamesJson };
+
+export default function TeamList() {
+    return (
+        <div>{firstTeam}</div>
+    )
+}
